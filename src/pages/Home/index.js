@@ -23,7 +23,13 @@ import {
     Link,
     TextLink,
     ContainerNotice,
-    DatePublication
+    DatePublication,
+    Social,
+    ButtonIcon,
+    IconFace,
+    IconInsta,
+    IconLink,
+    IconGit
 } from './styles';
 import brasil from "./../../assets/imgs/brazil.png";
 import mundo from "./../../assets/imgs/world.png";
@@ -33,7 +39,7 @@ import { WebView } from 'react-native-webview';
 import RBSheet from "react-native-raw-bottom-sheet";
 
 import { notice } from "./../../services/apiService";
-import { View, Linking  } from "react-native";
+import { View, Linking } from "react-native";
 import moment from "moment";
 
 export default function Home({ navigation }) {
@@ -42,12 +48,12 @@ export default function Home({ navigation }) {
     const [noticeInfo, setNoticeInfo] = useState([])
     const [date, setDate] = useState(null);
 
-    const gotToPublication = (url) =>{
-        if(url != null){
+    const gotToPublication = (url) => {
+        if (url != null) {
             Linking.openURL(url);
         }
     }
-        
+
     useEffect(() => {
         var loadDate = new Date();
         var DateFormat = moment(loadDate).format('YYYY-MM-DD');
@@ -122,6 +128,38 @@ export default function Home({ navigation }) {
                     }
 
                 </ScrollHorizontal>
+                
+                <Social>
+                <RowTitle>
+                    <Title>Criado por Jonathan Ramsés </Title>
+                </RowTitle>
+                    <Row>
+                        <ColTitle>
+                            <ButtonIcon onPress={()=> gotToPublication('https://www.facebook.com/jonathan.ramsesalvesborges')}>
+                                <IconFace />
+                            </ButtonIcon>
+                        </ColTitle>
+
+                        <ColTitle>
+                            <ButtonIcon onPress={()=> gotToPublication('https://www.instagram.com/ramses.jonathan/')}>
+                                <IconInsta />
+                            </ButtonIcon>
+                        </ColTitle>
+
+                        <ColTitle>
+                            <ButtonIcon onPress={()=> gotToPublication('https://www.linkedin.com/in/jonathan-rams%C3%A9s-alves-borges-b6890214b/')}>
+                                <IconLink />
+                            </ButtonIcon>
+                        </ColTitle>
+
+                        <ColTitle>
+                            <ButtonIcon onPress={()=> gotToPublication('https://github.com/abjona')}>
+                                <IconGit />
+                            </ButtonIcon>
+                        </ColTitle>
+
+                    </Row>
+                </Social>
             </Container>
 
             <RBSheet
@@ -145,7 +183,7 @@ export default function Home({ navigation }) {
 
                     <DatePublication>Publicado em : {noticeInfo ? moment(noticeInfo["publishedAt"]).format('DD/MM/YYYY HH:mm') : null}</DatePublication>
 
-                    <Link onPress={()=>{
+                    <Link onPress={() => {
                         gotToPublication(noticeInfo["url"])
                     }}>
                         <TextLink>Matéria completa</TextLink>

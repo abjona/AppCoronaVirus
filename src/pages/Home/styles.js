@@ -1,9 +1,77 @@
 import styled from 'styled-components/native';
+import { Entypo, AntDesign } from "@expo/vector-icons";
 
 export const Container = styled.ScrollView`
     flex: 1;
     padding: 10px 10px;
     background-color: #fff;
+`;
+
+export const IconFace = styled(Entypo).attrs({
+    name: "facebook"
+  })`
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 35px;
+    z-index: 2;
+    text-align: center;
+    padding: 5px 0px;
+    margin-top: 5px;
+    color:#06256E;
+  `;
+
+export const IconInsta = styled(AntDesign).attrs({
+    name: "instagram"
+  })`
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 35px;
+    z-index: 2;
+    text-align: center;
+    padding: 5px 0px;
+    margin-top: 5px;
+    color: #f64e05;
+  `;
+
+export const IconLink = styled(AntDesign).attrs({
+    name: "linkedin-square"
+  })`
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 35px;
+    z-index: 2;
+    text-align: center;
+    padding: 5px 0px;
+    margin-top: 5px;
+    color: #06256E;
+  `;
+
+export const IconGit = styled(AntDesign).attrs({
+    name: "github"
+  })`
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    font-size: 35px;
+    z-index: 2;
+    text-align: center;
+    padding: 5px 0px;
+    margin-top: 5px;
+    color: #333;
+  `;
+
+  export const ButtonIcon = styled.TouchableOpacity`
+    height:50px;
+    width: 50px;
+  `;
+
+export const Social = styled.View`
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
 `;
 
 export const ContainerNotice = styled.ScrollView`
@@ -47,14 +115,6 @@ export const ColTitle = styled.View`
     flex-direction: column;
 `;
 
-export const CopRight = styled.View`
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    position: absolute;
-    bottom: 5px;
-    left: 20px;
-`;
 
 export const Card = styled.TouchableOpacity`
     width: 100%;
