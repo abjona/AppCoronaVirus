@@ -1,6 +1,23 @@
 import React, { useEffect, useState, useRef } from 'react';
 
-import { Container, Load,TextCase, Row, Text, Title, IconRight, Card, State, RowCard, ColState, ColIcon, CardCases, RowCases, ColCases } from './styles';
+import {
+    Container,
+    Load,
+    TextCase,
+    Row,
+    Text,
+    Title,
+    IconRight,
+    Card,
+    State,
+    RowCard,
+    ColState,
+    ColIcon,
+    CardCases,
+    RowCases,
+    ColCases,
+    Search
+} from './styles';
 import { getCasesWorld } from "./../../services/apiService";
 
 import { View } from "react-native";
@@ -9,9 +26,22 @@ import RBSheet from "react-native-raw-bottom-sheet";
 export default function World() {
     const refRBSheet = useRef();
     const [states, setStates] = useState(null);
+    const [arrayList, setArrayList] = useState(null);
     const [load, setLoad] = useState(true);
     const [infEstado, setInfoEstado] = useState(null);
 
+    const searchState = async (text) => {
+        const val = text;
+        if (val && val.trim() != '') {
+            var search = arrayList.filter((item) => {
+                return (item["state"].toLowerCase().indexOf(val.toLowerCase()) > -1);
+            });
+            await setStates(search);
+        } else {
+            await setStates(arrayList);
+        }
+
+    }
 
     useEffect(() => {
         async function load() {
@@ -29,8 +59,9 @@ export default function World() {
     return (
         <>
             <Container>
+                <Search onChangeText={(text) => { searchState(text) }} placeholder="Pesquise aqui"></Search>
                 {load ? <View style={{ alignContent: "center" }}>
-                    <Load size={50} color='#00CED1'></Load>
+                    <Load size={50} color='#333'></Load>
                 </View> :
                     states["values"].map(element => {
                         return (
@@ -57,7 +88,7 @@ export default function World() {
                         )
                     })
                 }
-                 <Row style={{ height: 10}}></Row>
+                <Row style={{ height: 10 }}></Row>
             </Container>
 
             <RBSheet
@@ -67,7 +98,7 @@ export default function World() {
                 closeOnPressMask={true}
                 customStyles={{
                     wrapper: {
-                        backgroundColor: "transparent"
+                        backgroundColor: "#3333"
                     },
                     draggableIcon: {
                         backgroundColor: "#3333"

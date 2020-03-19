@@ -13,7 +13,7 @@ const Router = () => (
         <Stack.Navigator screenOptions={{ headerStyle:{
             elevation: 0,
         }}}>
-            <Stack.Screen name="Menu" component={HomeScreen}></Stack.Screen>
+            <Stack.Screen name="Menu" component={HomeScreen} options={{ headerTitle: 'CoronaINFO'}}></Stack.Screen>
             <Stack.Screen name="Mundo" component={WorldScreen}></Stack.Screen>
             <Stack.Screen name="Brasil" component={BrasilScreen}></Stack.Screen>
         </Stack.Navigator>

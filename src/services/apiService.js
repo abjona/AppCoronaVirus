@@ -1,4 +1,5 @@
 import axios from "axios";
+import { APIKEY } from 'react-native-dotenv';
 
 export const getCasesBr = async() => {
    return new Promise(async(resolve, rejected)=>{
@@ -19,5 +20,16 @@ export const getCasesWorld = async() => {
         }).catch((err) => {
             rejected(err)
         })
-       })
+    })
+}
+
+export const notice = async(date)=>{
+    return new Promise(async(resolve, rejected)=>{
+        await axios.get('http://newsapi.org/v2/everything?q=coronavirus&language=pt&from='+date+'&to='+date+'&apiKey='+APIKEY)
+        .then((data)=>{
+            resolve(data.data);
+        }).catch((err)=>{
+            rejected(err);
+        })
+    })
 }

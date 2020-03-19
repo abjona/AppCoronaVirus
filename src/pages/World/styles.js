@@ -3,7 +3,7 @@ import { AntDesign } from "@expo/vector-icons";
 export const Container = styled.ScrollView`
     padding-top: 50px;
     flex: 1;
-    padding: 20px 20px;
+    padding: 10px 20px;
     background-color: #fff;
 `;
 
@@ -25,7 +25,15 @@ export const Card = styled.TouchableOpacity`
     padding: 20px;
     border-radius: 10px;
     width: 100%;
-    background-color: #00CED1;
+    background-color:  #333;
+`;
+
+export const Search = styled.TextInput`
+  border-bottom-width: 1px;
+  border-bottom-color: #4444;
+  margin-bottom: 20px;
+  padding: 5px;
+  border-radius: 5px;
 `;
 
 export const State = styled.Text`
