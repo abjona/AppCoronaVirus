@@ -34,7 +34,7 @@ export default function World() {
         const val = text;
         if (val && val.trim() != '') {
             var search = arrayList.filter((item) => {
-                return (item["state"].toLowerCase().indexOf(val.toLowerCase()) > -1);
+                return (item["uid"].toLowerCase().indexOf(val.toLowerCase()) > -1);
             });
             await setStates(search);
         } else {
@@ -46,7 +46,8 @@ export default function World() {
     useEffect(() => {
         async function load() {
             await getCasesWorld().then((data) => {
-                setStates(data);
+                setStates(data["values"]);
+                setArrayList(data["values"]);
                 setLoad(false);
             }).catch(() => {
                 setStates([]);
@@ -63,7 +64,7 @@ export default function World() {
                 {load ? <View style={{ alignContent: "center" }}>
                     <Load size={50} color='#333'></Load>
                 </View> :
-                    states["values"].map(element => {
+                    states.map(element => {
                         return (
                             <>
                                 <Row>
