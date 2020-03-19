@@ -8,9 +8,9 @@ export default function Home({ navigation }) {
     
     return (
         <Container>
-            <Row>
+            {/* <Row>
                 <H1>Casos</H1>
-            </Row>
+            </Row> */}
             <Row>
                 <Col>
                     <Card activeOpacity={0.4} onPress={()=> navigation.navigate("Brasil")}>
@@ -29,9 +29,9 @@ export default function Home({ navigation }) {
                     </Card>
                 </Col>
             </Row>
-            <Row>
+            {/* <Row>
                 <H1>Notícias</H1>
-            </Row>
+            </Row> */}
         </Container>
 
     );

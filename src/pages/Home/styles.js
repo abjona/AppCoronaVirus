@@ -1,8 +1,9 @@
 import styled from 'styled-components/native';
 
-export const Container = styled.ScrollView`
+export const Container = styled.View`
     padding-top: 50px;
     flex: 1;
+    justify-content: center;
     padding: 20px 10px;
     background-color: #fff;
 `;
@@ -19,7 +20,6 @@ export const Header = styled.View`
 
 export const Row = styled.View`
     flex-direction: row;
-    flex: 1;
     margin-bottom:10px;
     width: 100%;
 `;
@@ -31,7 +31,6 @@ export const Col = styled.View`
 `;
 
 export const Card = styled.TouchableOpacity`
-    flex: 1;
     width: 100%;
     height: 180px;
     border-width: 0.5px;
@@ -72,7 +71,7 @@ export const Text = styled.Text`
 `;
 
 export const H1 = styled.Text`
-    font-size: 25px;
+    font-size: 20px;
     text-align: left;
     font-weight: bold;
     margin-left: 5px;

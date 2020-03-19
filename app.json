@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "App Coronavirus",
+    "name": "Corona Inf",
     "slug": "app-corona",
     "privacy": "public",
     "sdkVersion": "36.0.0",
@@ -24,7 +24,12 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "bundleIdentifier": "com.corononInfo.coronaData",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.corononInfo.coronaData",
+      "versionCode": 2
     }
   }
 }
