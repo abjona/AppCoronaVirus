@@ -12,3 +12,4 @@ Aplicativo Para mostrar informações sobre o Corona Vírus no Brasil e no mundo
     </div>
   </div>
 </div>
+<h3>Em breve na Play Store !! </h3>
